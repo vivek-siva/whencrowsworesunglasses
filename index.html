@@ -8,63 +8,51 @@
   <script src="https://unpkg.com/phosphor-icons"></script>
 </head>
 <body>
-  <!-- Top Button -->
-  <div class="nav-button">
-    <a href="https://writervivek.com" target="_blank" rel="noopener" class="nav-link">
-      <i class="ph ph-globe-simple"></i> Visit writervivek.com
-    </a>
+  <!-- Fixed Navbar -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#" id="about-btn">About Author</a>
+    <a href="#reviews">Reviews</a>
+    <a href="https://writervivek.com" target="_blank" rel="noopener">Website</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <img id="rotating-image" src="images/book1.png" alt="Book cover" class="book-cover fade-image" />
+    <div class="hero-text">
+      <h1>When Crows Wore Sunglasses</h1>
+      <p class="tagline">A surreal noir collection exploring identity, guilt, and uncanny beauty.</p>
+      <a class="cta-button" href="https://www.amazon.com/s?k=B09V1S16LR" target="_blank">🛒 Buy on Amazon</a>
+    </div>
+  </section>
+
+  <!-- About Blurb -->
+  <section class="blurb">
+    <h2>About the Book</h2>
+    <p>Cinematic, haunting stories that linger. Perfect for lovers of dark fiction and mythic realism.</p>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews" id="reviews">
+    <h2><i class="ph ph-star"></i> Reader Reviews</h2>
+    <div id="amazon-reviews">
+      <p>Loading reviews...</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Vivek Sivakumar — All rights reserved
+  </footer>
+
+  <!-- Author Modal -->
+  <div class="modal-overlay" id="about-modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close">✕</button>
+      <h2>About Vivek Sivakumar</h2>
+      <p>Vivek is an AWS engineer and storyteller based in Charlotte, blending noir moods with mythic themes...</p>
+      <a href="https://writervivek.com" target="_blank" rel="noopener">Visit Author Website</a>
+    </div>
   </div>
-
-  <main class="page">
-    <section class="hero">
-      <img src="images/book-cover.png" alt="Book cover" class="book-cover" />
-
-      <div class="hero-text">
-        <h1>When Crows Wore Sunglasses</h1>
-        <p class="tagline">
-          A surreal noir collection exploring guilt, identity, and the strange beauty of broken souls.
-        </p>
-
-        <a class="cta-button" href="https://www.amazon.com/s?k=B09V1S16LR&i=digital-text&_encoding=UTF8&isDramIntegrated=true&shoppingPortalEnabled=true" target="_blank">
-          🛒 Buy on Amazon
-        </a>
-      </div>
-    </section>
-
-    <section class="blurb">
-      <h2>About the Book</h2>
-      <p>
-        From alleyways that whisper to crows that wear shades, each story in this collection invites you into a world where the lines between reality and the subconscious blur.
-        <strong>When Crows Wore Sunglasses</strong> is a literary fever dream—dark, haunting, and unforgettable.
-      </p>
-    </section>
-
-    <section class="reviews">
-      <h2><i class="ph ph-star"></i> What Readers Are Saying</h2>
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"A noir dreamscape. Feels like Kafka meets Nolan on a foggy rooftop."</blockquote>
-        <cite><i class="ph ph-pen-nib"></i> Indie Reader's Digest</cite>
-      </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★☆</div>
-        <blockquote>"Each story is like a cinematic cutscene from a dream you can’t quite shake."</blockquote>
-        <cite><i class="ph ph-user-circle"></i> Early Amazon Reviewer</cite>
-      </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Unapologetically haunting. One of the boldest indie fiction debuts this year."</blockquote>
-        <cite><i class="ph ph-book-open"></i> The Fictionist</cite>
-      </div>
-    </section>
-
-    <footer>
-      &copy; 2025 Vivek Sivakumar — All rights reserved
-    </footer>
-  </main>
 
   <script src="script.js"></script>
 </body>
