@@ -6,9 +6,180 @@
   <title>When Crows Wore Sunglasses</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/phosphor-icons"></script>
+  <style>
+    /* === Embedded key styles for quick integration === */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
+      color: #111827;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #ffffffee;
+      backdrop-filter: blur(8px);
+      padding: 1rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .navbar a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 6rem 1rem 3rem;
+    }
+
+    .image-frame {
+      background: white;
+      padding: 1rem;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      min-width: 260px;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .book-cover {
+      max-width: 220px;
+      height: auto;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #374151;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+      background: #facc15;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(250,204,21,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #fde047;
+      transform: scale(1.05);
+    }
+
+    .blurb, .reviews {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    .reviews h2 i {
+      color: #facc15;
+    }
+
+    .review {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin: 1.5rem auto;
+    }
+
+    .stars {
+      font-size: 1.2rem;
+      color: #facc15;
+    }
+
+    cite {
+      display: block;
+      margin-top: 0.5rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      padding: 2rem 0;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+    }
+
+    .modal {
+      background: white;
+      max-width: 600px;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: left;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      border: none;
+      background: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .modal a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #2563eb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Fixed Navbar -->
   <nav class="navbar">
     <a href="#home">Home</a>
     <a href="#" id="about-btn">About Author</a>
@@ -16,9 +187,10 @@
     <a href="https://writervivek.com" target="_blank">Website</a>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero" id="home">
-    <img id="rotating-image" src="images/book1.png" alt="Book cover" class="book-cover fade-image" />
+    <div class="image-frame">
+      <img id="rotating-image" src="images/book1.png" alt="Book cover" class="book-cover" />
+    </div>
     <div class="hero-text">
       <h1>When Crows Wore Sunglasses</h1>
       <p class="tagline">A surreal noir collection exploring identity, guilt, and uncanny beauty.</p>
@@ -26,28 +198,23 @@
     </div>
   </section>
 
-  <!-- Blurb Section -->
   <section class="blurb">
     <h2>About the Book</h2>
     <p>Cinematic, haunting stories that linger. Perfect for lovers of dark fiction, noir moods, and mythic realism.</p>
   </section>
 
-  <!-- Reviews Section -->
   <section class="reviews" id="reviews">
-    <h2><i class="ph ph-star"></i> Reader Reviews*</h2>
-
+    <h2><i class="ph ph-star"></i> Reader Reviews</h2>
     <div class="review">
       <div class="stars">★★★★★</div>
       <blockquote>“A noir dreamscape. Feels like Kafka meets Nolan on a foggy rooftop.”</blockquote>
       <cite><i class="ph ph-pen-nib"></i> Indie Reader's Digest</cite>
     </div>
-
     <div class="review">
       <div class="stars">★★★★☆</div>
       <blockquote>“Each story is like a cinematic cutscene from a dream you can’t quite shake.”</blockquote>
       <cite><i class="ph ph-user-circle"></i> Early Amazon Reviewer</cite>
     </div>
-
     <div class="review">
       <div class="stars">★★★★★</div>
       <blockquote>“Unapologetically haunting. One of the boldest indie fiction debuts this year.”</blockquote>
@@ -59,20 +226,41 @@
     &copy; 2025 Vivek Sivakumar — All rights reserved
   </footer>
 
-  <!-- Author Modal -->
+  <!-- Modal -->
   <div class="modal-overlay" id="about-modal">
     <div class="modal">
       <button class="modal-close" id="modal-close">✕</button>
       <h2>About Vivek Sivakumar</h2>
-      <p>Vivek Sivakumar is a cloud architect and writer who divides his life between building digital worlds and crafting literary ones. He is the creator of writervivek.com, where his stories in Tamil have drawn praise for their emotional depth and sharp satire. His work often explores the intersection of the absurd and the profound—grounded in South Indian life, yet resonant across cultures.
-
-When Crows Wore Sunglasses marks his debut in English fiction—a bold and imaginative collection that blends surrealism, social critique, and unexpected tenderness. Vivek lives in Charlotte, North Carolina, with his wife and children, and writes late into the night, guided by the belief that stories—like crows in sunglasses—can see the world differently.
-
-Write your feedback to VIV@duck.com (yes its a real email id) </p>
+      <p>Vivek Sivakumar is a cloud architect and writer who divides his life between building digital worlds and crafting literary ones. He is the creator of writervivek.com, where his stories in Tamil have drawn praise for their emotional depth and sharp satire. His work often explores the intersection of the absurd and the profound—grounded in South Indian life, yet resonant across cultures.</p>
+      <p><strong>When Crows Wore Sunglasses</strong> marks his debut in English fiction—a bold and imaginative collection that blends surrealism, social critique, and unexpected tenderness. Vivek lives in Charlotte, North Carolina, with his wife and children, and writes late into the night, guided by the belief that stories—like crows in sunglasses—can see the world differently.</p>
+      <p>Write your feedback to <strong>VIV@duck.com</strong></p>
       <a href="https://writervivek.com" target="_blank" rel="noopener">Visit Author Website</a>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Rotate book images
+    const images = ["images/book1.png", "images/book2.png", "images/book3.png"];
+    let index = 0;
+    const img = document.getElementById("rotating-image");
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = images[index];
+        img.style.opacity = 1;
+      }, 300);
+    }, 4000);
+
+    // Modal toggle
+    document.getElementById("about-btn").onclick = (e) => {
+      e.preventDefault();
+      document.getElementById("about-modal").style.display = "flex";
+    };
+    document.getElementById("modal-close").onclick = () => {
+      document.getElementById("about-modal").style.display = "none";
+    };
+  </script>
 </body>
 </html>
