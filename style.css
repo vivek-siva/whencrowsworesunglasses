@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.book-cover {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #facc15;
+  color: #000;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #fde047;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: #888;
+}
