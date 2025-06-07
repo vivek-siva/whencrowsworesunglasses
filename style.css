@@ -1,126 +1,118 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #000000, #1a1a1a);
-  color: #ffffff;
+  background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  overflow: hidden;
+  color: #111827;
 }
 
-.container {
-  max-width: 600px;
-  padding: 2rem;
-  animation: fadeIn 1.5s ease forwards;
+.top-nav {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.95rem;
+}
+
+.top-nav a {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px dotted #2563eb;
+}
+
+.page {
+  padding: 3rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .book-cover {
   width: 220px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
-  margin-bottom: 2rem;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideUp 1s ease forwards;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-h1 {
+.hero-text {
+  max-width: 500px;
+  text-align: center;
+}
+
+.hero-text h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  opacity: 0;
-  animation: slideUp 1s ease forwards;
-  animation-delay: 0.4s;
 }
 
 .tagline {
   font-size: 1.2rem;
-  color: #cccccc;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: slideUp 1s ease forwards;
-  animation-delay: 0.8s;
+  color: #374151;
+  margin-bottom: 1.5rem;
 }
 
 .cta-button {
   background-color: #facc15;
   color: #000;
-  font-weight: bold;
+  font-weight: 600;
   padding: 0.75rem 1.5rem;
-  border: none;
   border-radius: 6px;
   text-decoration: none;
   display: inline-block;
-  transform: scale(0.9);
-  opacity: 0;
-  animation: bounceIn 1s ease forwards;
-  animation-delay: 1.2s;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
   background-color: #fde047;
-  transform: scale(1.05);
+}
+
+.blurb {
+  margin: 3rem 0;
+  line-height: 1.7;
+}
+
+.blurb h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.reviews {
+  background: #f3f4f6;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin-bottom: 3rem;
+}
+
+.reviews h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  font-style: italic;
+  text-align: center;
+  color: #374151;
+}
+
+.review-card cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #6b7280;
 }
 
 footer {
-  margin-top: 3rem;
-  font-size: 0.8rem;
-  color: #888;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-  animation-delay: 2s;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.top-nav {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  z-index: 1000;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.top-nav a {
-  color: #facc15;
-  text-decoration: none;
-  border-bottom: 1px dotted #facc15;
-  transition: opacity 0.3s ease, border 0.3s ease;
-}
-
-.top-nav a:hover {
-  opacity: 0.8;
-  border-bottom: 1px solid #fde047;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  padding-top: 2rem;
 }
